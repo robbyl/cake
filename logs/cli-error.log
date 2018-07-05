@@ -1,0 +1,62 @@
+2018-06-29 09:15:40 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Driver.php on line 93
+Stack Trace:
+#0 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Driver.php(93): PDO->__construct('mysql:host=loca...', 'my_app', 'secret', Array)
+#1 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(106): Cake\Database\Driver->_connect('mysql:host=loca...', Array)
+#2 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Connection.php(391): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(1034): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(988): Bake\Shell\Task\ModelTask->_getAllTables()
+#9 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(212): Bake\Shell\Task\ModelTask->listAll()
+#10 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#11 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'district', 'District')
+#12 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('District')
+#13 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\Shell.php(532): Bake\Shell\Task\ModelTask->main('District')
+#14 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\Shell.php(525): Cake\Console\Shell->runCommand(Array, false, Array)
+#15 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#16 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#17 C:\xampptpb\htdocs\cake\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#18 {main}
+
+
+2018-06-29 09:24:16 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cake.district' doesn't exist in C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'district', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('district', Array)
+#2 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\ORM\Table.php(548): Cake\Database\Schema\CachedCollection->describe('district')
+#3 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\ORM\Table.php(673): Cake\ORM\Table->getSchema()
+#4 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(220): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'district', 'District')
+#7 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('District')
+#8 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\Shell.php(532): Bake\Shell\Task\ModelTask->main('District')
+#9 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\Shell.php(525): Cake\Console\Shell->runCommand(Array, false, Array)
+#10 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#12 C:\xampptpb\htdocs\cake\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#13 {main}
+
+
+2018-06-29 09:27:30 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cake.student' doesn't exist in C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'student', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('student', Array)
+#2 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\ORM\Table.php(548): Cake\Database\Schema\CachedCollection->describe('student')
+#3 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\ORM\Table.php(673): Cake\ORM\Table->getSchema()
+#4 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(220): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'student', 'Student')
+#7 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('Student')
+#8 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\BakeShell.php(272): Bake\Shell\Task\ModelTask->main('Student')
+#9 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Student', 0)
+#10 C:\xampptpb\htdocs\cake\vendor\cakephp\bake\src\Shell\BakeShell.php(273): Cake\Collection\Collection->each(Object(Closure))
+#11 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\Shell.php(518): Bake\Shell\BakeShell->all('Student')
+#12 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 C:\xampptpb\htdocs\cake\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 C:\xampptpb\htdocs\cake\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
